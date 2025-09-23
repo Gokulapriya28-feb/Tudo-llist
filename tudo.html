@@ -1,0 +1,35 @@
+<style>
+    body{
+        background-color: blueviolet;
+        color: white;
+    }
+    h1{
+        font-style: italic;
+    }
+</style>
+<body>
+    <center>
+        <h1>Tudo List</h1>
+        <input id="input">
+<button onclick="add()">Add</button>
+<ul id="listcontainer">
+    <li>listitems:
+        <button onclick="deleteitem(event)">delete</button>
+    </li>
+</ul>
+<script>
+    var ul=document.getElementById("listcontainer")
+    var input=document.getElementById("input")
+    function add()
+    {
+        var listitem=document.createElement("li")
+        listitem.innerHTML=input.value + "<button onclick='deleteitem(event)'>delete</button>"
+        ul.append(listitem)
+    }
+    function deleteitem(event)
+    {
+        event.target.parentElement.remove()
+    }
+</script>
+</center>
+</body>
